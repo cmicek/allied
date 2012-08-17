@@ -1,0 +1,254 @@
+@import mixins
+@import reset
+@import forms
+@import typography
+ 
+
+/*Layout =====================================*/
+
+*
+  @include box-sizing (border-box)
+body
+  border-top: solid 1px
+  background: lighten($black5, 3%)
+
+/*Header =====================================*/
+
+.site-header
+  box-shadow: 0 1px 3px rgba(0,0,0,.25)
+  background: #fff
+  border-bottom: solid 1px $darkorange
+  display: block
+  left: 0
+  padding: 11px 0 11px 5px
+  position: absolute
+  top: 0
+  width: 100%
+  z-index: 2
+
+  .logo
+    background: url(../images/allied-logo.png) center center no-repeat
+    border: none
+    display: block
+    float: left
+    height: 22px
+    text-indent: 100%
+    white-space: nowrap
+    width: 130px
+    overflow: hidden
+    
+    @media screen and (-webkit-min-device-pixel-ratio: 2)
+      @include background-size (125px 22px)
+      background-image: url(../images/allied-logo-2x.png)
+  .nav-toggle
+    @include gradient($orange, (top, $orange, $darkorange))
+    border: solid 1px $darkorange
+    border-bottom: none
+    border-radius: 6px 6px 0 0
+    box-shadow: inset 0 1px 3px -1px rgba(0,0,0,.25)
+    display: block
+    height: 46px
+    position: absolute
+    right: 5px
+    top: 5px
+    width: 44px
+
+    i,
+    i:before,
+    i:after
+      background: lighten($orange, 60%)
+      border-radius: 100px
+      box-shadow: 0 1px 3px rgba(0,0,0,.25)
+      content: ""
+      display: block
+      float: left
+      height: 4px
+      position: absolute
+      width: 25px
+    i
+      left: 8px
+      top: 9px
+
+      &:before
+        top: 8px
+      &:after
+        top: 16px
+  .call
+    @include gradient(#fff, (top, #fff 5%, $black5))
+    border: solid 1px $black20
+    border-radius: 100px
+    display: block
+    font-family: "DINMedium", Arial, sans-serif
+    float: left
+    overflow: hidden
+    padding: 5px 12px 1px 31px
+    position: absolute
+    right: 55px
+    text-shadow: 0 1px 0 #fff
+    top: 8px
+
+    i
+      background: url(../images/icon-phone.png) center center no-repeat
+      display: block
+      height: 20px
+      left: 7px
+      position: absolute
+      top: 4px
+      width: 20px
+      
+      @media screen and (-webkit-min-device-pixel-ratio: 2)
+        @include background-size (16px 16px)
+        background-image: url(../images/icon-phone-2x.png)
+
+/*Nav =====================================*/
+
+nav
+  @include gradient($orange, (top, $orange, $darkorange 11px))
+  border-bottom: solid 1px $darkorange
+  box-shadow: 0 1px 0 #fff
+  height: 55px
+  position: relative
+  width: 100%
+  z-index: 1
+
+
+/*Breadcrumbs =====================================*/
+
+.breadcrumbs
+  background: $black5
+  border-bottom: solid 1px $black20
+  box-shadow: 0 1px 0 #fff, inset 0 -1px 2px rgba(0,0,0,.05)
+  font: 12px/12px "DINMedium", "Arial", sans-serif
+  font-size: 12px
+  line-height: 12px
+  overflow: hidden
+  padding: 13px 22px 9px
+  text-shadow: 0 1px 0 #fff
+  a,span
+    border: none
+    display: block
+    float: left
+    margin-left: 28px
+    position: relative
+
+    &:first-child
+      margin-left: 0
+      &:before
+        display: none
+    &:before
+      content: ">"
+      display: block
+      left: -20px
+      position: absolute
+      top: 0
+
+  .breadcrumb-home
+    height: 16px
+    text-indent: 100%
+    overflow: hidden
+    position: relative
+    top: -3px
+    white-space: nowrap
+    width: 16px
+
+  a.breadcrumb-home
+    background: url(../images/icon-home-link.png) center center no-repeat
+
+    @media screen and (-webkit-min-device-pixel-ratio: 2)
+      @include background-size (16px 16px)
+      background-image: url(../images/icon-home-link-2x.png)
+
+/*Main Content =====================================*/
+
+.main-content
+  padding-top: 62px
+  position: relative
+  img
+    float: left
+    height: auto
+    max-width: 100%
+  .content
+    float: left
+    padding: 22px
+    width: 100%
+
+/*Main Content Sidebar =====================================*/
+
+.content-sidebar
+  background: $black url(../images/bg-dark-noise.png) repeat
+  border-top: solid 1px #000
+  border-bottom: solid 1px #000
+  box-shadow: 0 1px 0 rgba(255,255,255,.5), inset 0 0 3px rgba(0,0,0,0.5)
+  float: left
+  position: absolute
+  top: 0
+  width: 100%
+
+  .btn
+    @include gradient($blue, (top, $blue, $darkblue))
+    border-radius: 100px
+    border: solid 1px darken($blue, 20%)
+    box-shadow: 0 1px 2px rgba(0,0,0,.15)
+    color: #fff
+    font-family: "DINMedium", "Arial", sans-serif
+    display: block
+    padding: 8px 12px
+    text-align: center
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25)
+
+.widget
+  border-bottom: solid 1px #000
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,.06)
+  padding: 11px 22px
+
+  &:last-child
+    border-bottom: none
+    box-shadow: none
+.widget-primary
+  background: rgba(0,0,0,.15)
+
+/*Main Content Footer =====================================*/
+
+
+.content-footer
+  background: $black10 url(../images/bg-light-noise.png)
+  border-top: solid 1px $black20
+  box-shadow: 0 1px 0 rgba(255,255,255,.5), inset 0 0 3px rgba(0,0,0,0.15)
+  float: left
+  text-shadow: 0 1px 0 #fff
+  width: 100%
+  a.section-link
+    @include gradient (rgba(255,255,255,0), (rgba(255,255,255,.35), rgba(255,255,255,.5)))
+    border: solid 1px rgba(255,255,255,.15)
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 0 2px rgba(0,0,0,0.04)
+    border: solid 1px darken($black10, 7%)
+    color: $black80
+    font: 13px/13px "DINMedium", "Arial", sans-serif
+    margin: 11px 11px 3px 11px
+    padding: 13px 11px 9px
+    text-transform: uppercase
+
+    &:after
+      display: none
+  a
+    border-bottom: solid 1px rgba(0,0,0,.09)
+    box-shadow: 0 1px 0  rgba(255,255,255,.4)
+    display: block
+    padding: 11px 22px
+    position: relative
+    width: auto
+
+    &:after
+      content: ">"
+      display: block
+      font-family: "DINBold", "Arial", sans-serif
+      height: 100%
+      padding: 11px 0
+      position: absolute
+      right: 22px
+      top: 0
+    &.active
+      background: rgba(255,255,255,.5)
+      color: $black
+      font-family: "DINBold", "Arial", sans-serif
+

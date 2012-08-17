@@ -1,0 +1,92 @@
+
+@mixin border-radius ($radius) 
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  -webkit-border-radius: $radius
+  border-radius: $radius
+
+@mixin background-size($str)
+  -moz-background-size: $str
+  -ms-background-size: $str
+  -webkit-background-size: $str
+  background-size: $str
+
+
+@mixin box-shadow($str: 0 1px 3px rgba(0,0,0,.10), $alwaysDisplay: false)
+  -moz-box-shadow: $str
+  -ms-box-shadow: $str
+  -webkit-box-shadow: $str
+  box-shadow: $str
+
+@mixin transition($str: all .15s)
+  -moz-transition: $str
+  -ms-transition: $str
+  -webkit-transition: $str
+  transition: $str
+
+@mixin transition-slow($str: all .4s, $alwaysDisplay: false)
+  -moz-transition: $str
+  -ms-transition: $str
+  -webkit-transition: $str
+  transition: $str
+  
+@mixin column($count, $spacing)
+  -moz-column-count: $count
+  -moz-column-gap: $spacing
+  -webkit-column-count: $count
+  -webkit-column-gap: $spacing
+  column-count: $count
+  column-gap: $spacing
+
+@mixin transform($str)
+  -moz-transform: $str
+  -ms-transform: $str
+  -webkit-transform: $str
+  transform: $str
+
+@mixin font-smoothing($str)
+  -moz-font-smoothing: $str
+  -ms-font-smoothing: $str
+  -webkit-font-smoothing: $str
+  font-smoothing: $str
+
+@mixin box-sizing($str)
+  -moz-box-sizing: $str
+  -ms-box-sizing: $str
+  -webkit-box-sizing: $str
+  box-sizing: $str
+
+@mixin backface-visibility($str)
+  -moz-backface-visibility: $str
+  -ms-backface-visibility: $str
+  -webkit-backface-visibility: $str
+  backface-visibility: $str
+
+@mixin gradient($color,$gradient)
+  background-color: $color
+  background-image: -moz-linear-gradient($gradient)
+  background-image: -ms-linear-gradient($gradient)
+  background-image: -webkit-linear-gradient($gradient)
+  background-image: linear-gradient($gradient)
+
+
+
+
+$blue: #006699
+$darkblue: darken(#006699, 10%)
+$orange: #F58025
+$darkorange: #A33B00
+$yellow: #FFD911
+
+$black5: #F5F5F5
+$black10: #EBEBEA
+$black20: #D7D6D5
+$black30: #C3C2C1
+$black40: #bdbcbc
+$black50: #9B9997 
+$black60: #868482 
+$black70: #72706D 
+$black80: #5E5B59 
+$black90: #4A4744 
+$black95: #36322F 
+$black: #36322F 
