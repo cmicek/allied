@@ -1,0 +1,178 @@
+/*Variable definitions =====================================*/
+
+$basewidth: 9.5%
+$colwidth: 3%
+
+
+.grid
+  float: left
+  margin-left: $colwidth
+  @media screen and (max-width: 599px)
+    float: none
+    margin-left: 0
+    width: 100% !important
+.offset
+  @media screen and (max-width: 599px)
+    margin-left: 0 !important
+
+/*Desktop Grid =====================================*/
+
+.container
+  display: block
+  margin: 0 auto
+  width: 1000px
+
+  @media screen and (max-width: 1015px)
+    padding: 0 15px
+    width: 100%
+
+  @media screen and (min-width: 1220px)
+    width: 1160px
+
+.row
+  margin-left: -$colwidth
+  &:after
+    content: ""
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+
+.show-grid 
+  margin-bottom: 10px
+  & [class*="col"]
+    color: #fff
+    background: #666
+    padding: 3px
+    text-align: center
+
+.col1,
+.col2,
+.col3,
+.col4,
+.col5,
+.col6,
+.col7,
+.col8,
+.tablet_colAuto,
+.tablet_col1,
+.tablet_col2,
+.tablet_col3,
+.tablet_col4,
+.tablet_col5,
+.tablet_col6,
+.tablet_col7,
+.tablet_col8
+  @extend .grid
+
+.col1
+  width: $basewidth
+
+.col2
+  width: $basewidth*2+$colwidth
+
+.col3
+  width: $basewidth*3+$colwidth*2
+
+.col4
+  width: $basewidth*4+$colwidth*3
+
+.col5
+  width: $basewidth*5+$colwidth*4
+
+.col6
+  width: $basewidth*6+$colwidth*5
+
+.col7
+  width: $basewidth*7+$colwidth*6
+
+.col8
+  width: $basewidth*8+$colwidth*7
+
+.col_fourths
+  float: left
+  width: 25%
+
+.col_thirds
+  float: left
+  width: 33.3333333%
+
+/*Offsets =====================================*/
+
+.offset1,
+.offset2,
+.offset3,
+.offset4,
+.offset5,
+.offset6,
+.offset7,
+.tablet_offset1,
+.tablet_offset2,
+.tablet_offset3,
+.tablet_offset4,
+.tablet_offset5,
+.tablet_offset6,
+.tablet_offset7
+  @extend .offset
+
+.offset1
+  margin-left: $basewidth + $colwidth*2
+.offset2
+  margin-left: $basewidth*2 + $colwidth*3
+.offset3
+  margin-left: $basewidth*3 + $colwidth*4
+.offset4
+  margin-left: $basewidth*4 + $colwidth*5
+.offset5
+  margin-left: $basewidth*5 + $colwidth*6
+.offset6
+  margin-left: $basewidth*6 + $colwidth*7
+.offset7
+  margin-left: $basewidth*7 + $colwidth*8
+
+
+/*Tablet Grid =====================================*/
+
+@media screen and (max-width: 850px)
+  .tablet_colAuto
+    width: auto
+  .tablet_col1
+    width: $basewidth
+
+  .tablet_col2
+    width: $basewidth*2+$colwidth
+
+  .tablet_col3
+    width: $basewidth*3+$colwidth*2
+
+  .tablet_col4
+    width: $basewidth*4+$colwidth*3
+
+  .tablet_col5
+    width: $basewidth*5+$colwidth*4
+
+  .tablet_col6
+    width: $basewidth*6+$colwidth*5
+
+  .tablet_col7
+    width: $basewidth*7+$colwidth*6
+
+  .tablet_col8
+    width: $basewidth*8+$colwidth*7
+
+  .tablet_offset1
+    margin-left: $basewidth + $colwidth*2
+  .tablet_offset2
+    margin-left: $basewidth*2 + $colwidth*3
+  .tablet_offset3
+    margin-left: $basewidth*3 + $colwidth*4
+  .tablet_offset4
+    margin-left: $basewidth*4 + $colwidth*5
+  .tablet_offset5
+    margin-left: $basewidth*5 + $colwidth*6
+  .tablet_offset6
+    margin-left: $basewidth*6 + $colwidth*7
+  .tablet_offset7
+    margin-left: $basewidth*7 + $colwidth*8
+
+

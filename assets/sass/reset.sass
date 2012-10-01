@@ -22,7 +22,6 @@ blockquote:before,blockquote:after,q:before,q:after
   content: ''
   content: none
 
-
 ins
   text-decoration: none
 
@@ -40,21 +39,22 @@ body, select, input, textarea
 
 
 html 
+  -webkit-font-smoothing: antialiased
+  -moz-font-smoothing: antialiased
+  -ms-font-smoothing: antialiased
   font-size: 100%
   overflow-y: scroll
   -webkit-text-size-adjust: 100%
   -ms-text-size-adjust: 100%
 
-
-
 .ie7 img 
   -ms-interpolation-mode: bicubic
 
-
-
-
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section 
   display: block
+
+*,*:before,*:after
+  @include box-sizing (border-box)
 
 
 
