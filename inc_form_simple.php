@@ -9,6 +9,6 @@
       <span class="label-title">Moving to:</span>
       <input type="text" placeholder="City or Postal Code" />
     </label>
-    <input type="submit" class="btn btn-small btn-red" value="Next &rsaquo;">
+    <a href="" class="btn btn-small btn-red" data-modal-target=".modal-container">Next &rsaquo;</a>
   </fieldset>
 </form>

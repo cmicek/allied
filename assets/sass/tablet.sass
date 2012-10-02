@@ -5,6 +5,9 @@
  *  ^Layout
  *  ^Header
  *  ^Primary Nav
+ *  ^Secondary Nav
+ *  ^Sidebar
+ *  ^Breadcrumbs
  *  ^Footer
  * ============================================*/
 
@@ -12,50 +15,103 @@
 
 /* ^Layout =====================================*/
 
+.container  
+  padding-left: 30px
+  padding-right: 30px
 .primary-copy
   padding: 45px 0 0 0
+  right: 0
+  width: 72%
+
+.page-header
+  width: 100%
+
 
 /* ^Header =====================================*/
 
 .logo
-  background-position: 17px 5px
   height: 75px
   left: 20px
+  padding: 0 10px
   width: 135px
-  &:active
-    background-position: 17px 6px
-  .backgroundsize &
-    background-size: 105px auto
 
 a.phone
   color: lighten($red, 35%)
   height: 50px
   left: 10px
+  letter-spacing: -1px
   padding: 0 15px 0 160px
-  font: 20px/26px "Univers 45", "Arial", sans-serif
+  font: 20px/26px "Univers 55", "Arial", sans-serif
   strong
     color: #fff
     display: block
     font: bold 14px/18px "Univers 45", "Arial", sans-serif
+    letter-spacing: 0
 
 /* ^Primary Nav =====================================*/
 
 .primary-nav
-  padding-left: 305px
+  padding-left: 290px
+
+/* ^Secondary Nav =====================================*/
+
+.secondary-nav
+  left: 30px
+  position: absolute
+  top: 0
+
+/* ^Footer Nav =====================================*/
+.footer-nav
+  @include column (2, 22px)
+  margin: 0
+  width: 100%
+.footer-nav-group
+  margin: 0
+  width: 100%
+
 
 /* ^Sidebar =====================================*/
-.sidebar
 
-.social-box
-  margin-top: -15px
+.sidebar
+  position: relative
+  top: 0
+  width: 100%
+.content-sidebar
+  @include column (2, 30px)
+  padding: 30px 15px
+  right: 0
+  width: 72%
+
+
+.social-box 
+  float: left
+  width: auto
+
+/* ^Breadcrumbs =====================================*/
+.page-header
+  width: 100%
+
+/* ^Icons =====================================*/
+
+.icon
+  margin: 4px
 
 /*^Footer =====================================*/
+.secondary-phone-text
+  padding: 30px
 .site-footer
-
+  .container
+    padding: 0
+  
   .footer-secondary
     background: $darkblue
     border-top: solid 1px lighten($blue, 4%)
     box-shadow: inset 0 0 3px rgba(0,0,0,.205px)
-    margin: 0
+    margin: 0 0 10px 0
+    position: relative
+    width: 100%
     &:after
       display: none
+    a
+      display: inline
+      margin: 0 15px 0 0

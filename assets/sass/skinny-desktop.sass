@@ -2,10 +2,19 @@
  * Skinny Desktop Stylesheet  (851px- 1015px wide)
  * Project:  North American
  * Table of Contents
+ *  ^Layout
  *  ^Primary Nav
+ *  ^Icons
  * ============================================*/
 
 @import mixins
+
+/* ^Layout =====================================*/
+
+.container
+  padding-left: 15px
+  padding-right: 15px
+  width: 100%
 
 /* ^Primary Nav =====================================*/
 
@@ -13,4 +22,19 @@
   padding-left: 455px
 
 .primary-nav-link
-  padding: 13px 13%
+  font-size: 14px
+  padding: 13px 14%
+
+  &:active
+    padding-bottom: 12px
+    padding-top: 14px
+
+/* ^Sidebar =====================================*/
+
+.sidebar
+  right: 15px
+
+/* ^Icons =====================================*/
+
+.icon
+  margin: 5px

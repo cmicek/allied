@@ -8,37 +8,80 @@
  *  ^Secondary Nav
  *  ^Tertiary Nav
  *  ^Footer Nav
+ *  ^Breadcrumbs
  *  ^Sidebar
  *  ^Icons
  *  ^Footer
- *  ^Breadcrumbs
+ *  ^Home page
  * ============================================*/
 
-@import mixins
-@import reset
-@import grid
-@import forms
-@import typography
- 
+@import mixins 
 
 /* ^Layout =====================================*/
+
+// Clearfix
+.cf
+  zoom: 1
+  &:before,
+  &:after
+    content: ""
+    display: table
+  
+  &:after
+    clear: both
 
 body
   background: $blue
 
+.container
+  display: block
+  margin: 0 auto
+  position: relative
+  width: 1000px
+
+  @media screen and (min-width: 1220px)
+    width: 1160px
+.picture-background
+  background: #fff
+  box-shadow: 0 1px 0 #fff
+  border-bottom: solid 1px $black15
+  overflow: hidden
+  padding: 80px 0 40px
+  *
+  position: relative
+  .bg
+    bottom: 0
+    height: 100%
+    margin: 0
+    max-width: auto
+    position: absolute
+    right: 0
+    width: auto
 .texture-background
+  @extend .cf
   background: $black5 url(../images/bg-body.jpg) repeat
 
 .white-background
+  @extend .cf
   background: #fff
 
 .primary-content
   border-bottom: solid 1px $black15
   border-top: solid 1px $black15
+  position: relative
 
 .primary-copy
+  float: right
   padding: 60px 0
+  position: relative
+  right: 26.5%
+  width: 47%
 
+.page-header
+  float: left
+  width: 72%
+
+  
 /* ^Header =====================================*/
 
 /* Blue bar */
@@ -49,6 +92,8 @@ body
   border-bottom: solid 1px $darkblue
   height: 80px
 
+  .container
+    padding-right: 0
 
   /* White bar */
 
@@ -87,31 +132,33 @@ body
 
 .logo
   @include transition (box-shadow .15s)
-  background: #fff url(../images/bg-logo.png) no-repeat 20px 0
+  background: #fff
   border: none
   border-radius: 0 0 2px 2px
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.20)
   display: block
   height: 85px
   left: -15px
-  overflow: hidden
+  padding: 0 20px
   position: absolute
   top: 10px
-  text-indent: 100%
-  white-space: nowrap
   width: 175px
   z-index: 1
+
+  img
+    box-shadow: none
+    height: auto
+    position: relative
+    width: 100%
 
   &:hover
     box-shadow: 0 2px 4px -1px rgba(0,0,0,.50)
     border: none
-  &:active
-    background-position: 20px 1px
-    top: 10px
 
-  .backgroundsize & 
-    background-image: url(../images/bg-logo-2x.png)
-    background-size: 133px auto
+  &:active
+    top: 10px
+    img
+      top: 1px
 
   .no-boxshadow &
     border: solid 1px $black20
@@ -177,10 +224,10 @@ a.phone
   border: none
   color: lighten($blue, 65%)
   display: block
-  font-size: 14px
+  font-size: 15px
   line-height: 18px
   height: 60px
-  padding: 20px 7%
+  padding: 20px 5%
   text-align: center
   top: 0
 
@@ -199,6 +246,8 @@ a.phone
     background: $darkblue
     box-shadow: inset 0 1px 2px rgba(0,0,0,.4)
     color: #fff
+.primary-nav-toggle
+  display: none
 
 .primary-nav-search
   position: absolute
@@ -207,9 +256,11 @@ a.phone
   width: 55px
   .primary-nav-link
     overflow: hidden
+    position: relative
     text-indent: 200%
     white-space: nowrap
     width: 100%
+    z-index: 2
     i
       background: url(../images/sprite.png) -171px -18px no-repeat
       display: block
@@ -230,14 +281,42 @@ a.phone
     &:active
       i
         margin-top: -8px
+  .toggled
+    background: $blue
+    box-shadow: 0 -1px 3px -1 rgba(0,0,0,.25)
+  .toggled + .primary-nav-search-box
+    display: block
+
+.primary-nav-search-box
+  background: $blue
+  box-shadow: 0 1px 3px rgba(0,0,0,.25)
+  border: solid 1px $darkblue
+  display: none
+  top: 90%
+  overflow: hidden
+  padding: 15px
+  position: absolute
+  right: -1px
+  width: 300px
+
+  .search-input
+    float: left
+    width: 75%
+  .btn-search
+    float: right
+    text-align: center
+    width: 20%
+
 
 /* ^Secondary Nav =====================================*/
 
 .secondary-nav
   border-bottom: solid 1px $black15
+  float: left
   font: 15px/20px "Univers 45", "Arial", sans-serif
   list-style: none
   padding-top: 43px
+  width: 22%
 .secondary-nav-item
   list-style: none
   margin: 0
@@ -286,8 +365,13 @@ a.phone
 /* ^Footer Nav =====================================*/
 
 .footer-nav
+  float: left
+  width: 72%
+.footer-nav-group
+  float: left
   list-style: none
   padding: 15px 0
+  width: 25%
 .footer-nav-title
   color: lighten($blue, 50%)
   font: 13px/15px "Univers 55", "Arial", sans-serif
@@ -335,51 +419,59 @@ a.phone
     width: 100%
 
 /* ^Breadcrumbs =====================================*/
-
 .breadcrumbs
   list-style: none
-  margin: 40px 0 5px 0
-  padding: 0
+  margin: 0 0 5px 0
+  padding: 40px 0 0 0
   overflow: hidden
   text-shadow: 0 1px 0 #fff
 
   .oldie &
     margin-top: 15px
 
-  .breadcrumb-item
-    display: inline
-    float: left
-    font-size: 12px
-    margin: 0
-    padding: 0 0 0 8px
-    &:before
-      color: $black50
-      content: "/"
-      display: inline
-      margin-right: 10px
-
-    &:first-child
-      padding-left: 0
-      &:before
-        display: none
-  .breadcrumb-link
-    border: none
+.breadcrumb-item
+  display: inline
+  float: left
+  font-size: 12px
+  margin: 0
+  padding: 0 0 0 8px
+  &:before
     color: $black50
+    content: "/"
+    display: inline
+    margin-right: 10px
 
-    &:hover
-      border-bottom: solid 1px
-      color: $blue
+  &:first-child
+    padding-left: 0
+    &:before
+      display: none
+.breadcrumb-link
+  border: none
+  color: $black50
 
-  .breadcrumb-end
-    color: $black90
+  &:hover
+    border-bottom: solid 1px
+    color: $blue
+
+.breadcrumb-item-end
+  color: $black90
+
 /* ^Sidebar =====================================*/
+
 .sidebar
-  padding-top: 43px
+  float: right
+  position: absolute
+  right: 0
+  top: 47px
+  width: 22%
+
+
 .box
   @include gradient(#fff, (top, #fff 50%, #f9f9f9))
   border: solid 1px $black20
   box-shadow: 0 1px 2px rgba(0,0,0,.1)
   margin-bottom: 25px
+  width: 100%
   
   &:after
     content: ""
@@ -428,7 +520,7 @@ a.banner-link
 
 .social-box
   box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 0 0 5px rgba(255,255,255,.5)
-  margin-top: 45px
+  float: right
   opacity: .9
   padding: 10px
 .box-phone
@@ -447,13 +539,13 @@ a.banner-link
   border: none
   display: block
   float: left
-  height: 38px
-  margin: 5px
+  height: 30px
+  margin: 8px
   opacity: .9
   overflow: hidden
   text-indent: 100%
   white-space: nowrap
-  width: 38px
+  width: 30px
 
   .backgroundsize &
     @include sprite-2x
@@ -462,19 +554,19 @@ a.banner-link
     opacity: 1
 
 .icon-pintrest
-  background-position: -599px -9px
+  background-position: -561px -13px
 .icon-facebook
-  background-position: -645px -9px
+  background-position: -598px -13px
 .icon-youtube
-  background-position: -414px -9px
+  background-position: -414px -13px
 .icon-linkedin
-  background-position: -369px -9px
+  background-position: -378px -13px
 .icon-rss
-  background-position: -461px -9px
+  background-position: -451px -13px
 .icon-google 
-  background-position: -554px -9px
+  background-position: -525px -13px
 .icon-twitter
-  background-position: -509px -9px
+  background-position: -488px -13px
 
 .badges
   margin: 0
@@ -523,9 +615,9 @@ a.banner-link
   color: $black80
   font: 16px/22px "Univers 45", "Arial", sans-serif
   padding: 30px 0
-  text-align: center
   text-shadow: 0 1px 0 #fff
-  
+  text-align: center
+
   a
     color: $blue
     font-family: "Univers 55", "Arial", sans-serif
@@ -541,11 +633,12 @@ a.banner-link
   text-shadow: 0 -1px 0 rgba(0,0,0,.15)
 
   .footer-secondary
-
+    float: right
     font-size: 13px
     line-height: 18px
     padding: 22px 0 30px 30px
     position: relative
+    width: 22%
 
     *
       position: relative
@@ -573,5 +666,13 @@ a.banner-link
       width: 300%
       z-index: 1
 
+/*^Home page =====================================*/
 
+.home-form
+  margin-right: 30px
+  float: left
+  width: 50%
 
+.home-banner
+  float: left
+  width: 25%

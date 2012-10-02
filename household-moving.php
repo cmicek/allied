@@ -1,124 +1,107 @@
- <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 oldie"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 oldie"> <![endif]-->
-<!--[if IE 8 ]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
- <head>
- 	<meta charset="utf-8">
- 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
- 	
- 	<title>Interior | North American Template</title>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   	
-   	
- 	<!-- All CSS Links -->
-  <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
-
- 	<!-- Modernizer Call. Should come after the stylesheet declaration -->
- 	<!-- Visit http://http://www.modernizr.com/download/ to generate a smaller, custom modernizr file-->
- 	<script src="assets/js/modernizr.js"></script>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <a class="logo" href="index.php"title="North American Van Lines">North American Van Lines</a>
-        <a class="phone" href="#">Call us at: <strong>1 (800) 369-9115</strong></a>
-        <ul class="primary-nav">
-          <li class="primary-nav-item primary-nav-item-active"><a class="primary-nav-link" href="#">Household moving</a></li>
-          <li class="primary-nav-item"><a class="primary-nav-link" href="#">Corporate Relocation</a></li>
-          <li class="primary-nav-item"><a class="primary-nav-link" href="#">International Moving</a></li>
-          <li class="primary-nav-item primary-nav-search"><a class="primary-nav-link" href="#">Search<i></i></a></li>
-        </ul>
-      </div>  
-    </header>
-    <section class="texture-background">
-      <div class="container ">
-        <div class="row">
-          <div class="col6">
-            <ol class="breadcrumbs">
-              <li class="breadcrumb-item"><a class="breadcrumb-link" href="index.php">Home</a></li>
-              <li class="breadcrumb-item"><span class="breadcrumb-end">Household Moving</span></li>
-            </ol>
-            <h1 class="page-title">Every household move is unique!</h1>
-            <p class="intro">As professional household movers, our personalized approach to moving reflects the person behind each move. Because every customer is different, no two household moves are ever the same.</p>
-          </div>
-          <div class="col2">
-            <?php include 'inc_social.php' ?>
-          </div>
+<?php include 'inc_header.php' ?>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.php" title="North American Van Lines">
+      <img src="assets/images/bg-logo-2x.png" alt="North American Van Lines" />
+    </a>
+    <a class="phone" href="tel:1 (800) 369-9115">
+      Call us
+      <span class="mobile-hidden">at:</span> <strong class="mobile-hidden">1 (800) 369-9115</strong>
+    </a>
+    <a href="#" class="primary-nav-toggle" data-toggle="" data-toggle-target=".site-header" data-toggle-target-on="primary-nav-active"> <i></i>
+    </a>
+    <ul class="primary-nav ">
+      <li class="primary-nav-item primary-nav-item-active">
+        <a class="primary-nav-link" href="household-moving.php">Household moving</a>
+      </li>
+      <li class="primary-nav-item">
+        <a class="primary-nav-link" href="corporate-relocation.php">Corporate Relocation</a>
+      </li>
+      <li class="primary-nav-item">
+        <a class="primary-nav-link" href="international-moving.php">International Moving</a>
+      </li>
+      <li class="primary-nav-item primary-nav-search">
+        <a class="primary-nav-link" href="#" data-toggle="">
+          Search <i></i>
+        </a>
+        <div class="primary-nav-search-box">
+          <form action="" method="">
+            <input type="text" class="search-input" placeholder="Search">
+            <input type="submit" class="btn btn-red btn-small btn-search" value="Go &rsaquo;"></form>
         </div>
-      </div>
-    </section>
-    <section class="white-background primary-content">
-      <div class="container ">
-        <div class="row">
-          <nav class="col2">
-            <ul class="secondary-nav">
-              <li class="secondary-nav-item">
-                <a class="secondary-nav-link" href="#">Overview</a>
-              </li>
-              <li class="secondary-nav-item">
-                <a class="secondary-nav-link" href="#">Our Advantage</a>
-              </li>
-              <li class="secondary-nav-item  secondary-nav-item-active">
-                <a class="secondary-nav-link" href="#">Moving Coverage</a>
-                <ul class="tertiary-nav">
-                  <li class="tertiary-nav-item">
-                    <a href="#" class="tertiary-nav-link">Valued Inventory</a>
-                  </li>
-                  <li class="tertiary-nav-item tertiary-nav-item-active">
-                    <a href="#" class="tertiary-nav-link">Storage Instructions</a>
-                  </li>
-                  <li class="tertiary-nav-item">
-                    <a href="#" class="tertiary-nav-link">Terms and Conditiona</a>
-                  </li>
-                  <li class="tertiary-nav-item">
-                    <a href="#" class="tertiary-nav-link">Packing</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="secondary-nav-item">
-                <a class="secondary-nav-link" href="#">Resources &amp; References</a>
-              </li>
-            </ul>
-          </nav>
-          <article class="col4 primary-copy">
-            <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+      </li>
+    </ul>
+  </div>
+</header>
+<section class="texture-background">
+  <div class="container ">
+    <div class="page-header">
+       <ol class="breadcrumbs">
+        <li class="breadcrumb-item">
+          <a class="breadcrumb-link" href="index.php" title="">Home</a>
+        </li>
+        <li class="breadcrumb-item breadcrumb-item-end" title="">Household Moving</li>
+      </ol>
+      <h1 class="page-title">Household Movers - Household Moving</h1>
+      <p class="intro">
+        If you have a concern with household moving services, we adopt that concern as our own and begin working toward a moving solution that's right for you.
+      </p>
+    </div>
+    <div class="sidebar">
+      <?php include 'inc_social.php' ?></div>
+  </div>
+</section>
+<section class="white-background primary-content">
+  <div class="container">
+    <article class="primary-copy">
+      <?php include 'inc_form_simple.php' ?>
+      <h2>Every household move is unique.</h2>
+        <p>As professional household movers, our personalized approach to moving reflects the person behind each move.</p>
+       <p>
+         Because every customer is different, no two household moves are ever the same. If you have a concern with household moving services, we adopt that concern as our own and begin working toward a moving solution that's right for you.
+      </p>
+      <p>
+        Whatever the moving needs might be, with North American Van Lines, no concern is too small and no request is too big.
+      </p>
+      <h3>Household Movers - Hire A Professional</h3>
+      <p>
+        When making the important decision of moving, it may seem as though doing it yourself is the most budget friendly option. However, after all factors are considered, hiring professional household movers may be the more cost-effective solution. During a self-move, you are responsible for not only the cost of the rental moving truck, but for gas, tolls, lodging, food and other expenses. Read more about why you should choose professional household movers.
+      </p>
+      <h3>Household Moving Services</h3>
+      <p>
+        To make sure your input and involvement are part of the moving process, we've put together a unique array of household moving services and protection options that will help you navigate your move. We also encourage you to learn more about the household moving process.
+      </p>
+      <p>
+        Even if your moving needs go beyond a local relocation, North American Van Lines can successfully handle your long distance moving. Entrusting an interstate move with North American Van Lines guarantees you a full range of moving services managed by qualified, professional movers.
+      </p>
+      <h3>Household Moving &amp; Storage</h3>
+      <p>
+        The need for household moving storage often arises when transitioning between homes. There are endless reasons as to why people use moving storage to house some of their belongings during a transition. At North American Van Lines, we are a moving and storage company offering the most convenient and efficient moving storage facilities.
+      </p>
+      <h3>Household Moving Company of Choice</h3>
+      <p>
+        With North American Van Lines, you have an entire team to support you throughout your household moving experience. Our training emphasizes a personalized approach, respect, care and attention to detail. Every employee is committed to doing whatever it takes to make your move right.
+      </p>
+    </article>
+    <aside class="sidebar content-sidebar">
+      <?php include 'inc_sidebar_testimonial.php' ?>
+      <?php include 'inc_sidebar_banner.php' ?></aside>
+    <ul class="secondary-nav">
+      <li class="secondary-nav-item secondary-nav-item-active"><a href="household-moving.php" class="secondary-nav-link" title="">Household Moving</a></li>
+      <li class="secondary-nav-item"><a href="household-moving-interior.php" class="secondary-nav-link" title="">Local Moving</a></li>
+      <li class="secondary-nav-item"><a href="household-moving-interior.php" class="secondary-nav-link" title="">Long Distance Moving</a></li>
+      <li class="secondary-nav-item"><a href="household-moving-interior.php" class="secondary-nav-link" title="">The North American Way</a></li>
+      <li class="secondary-nav-item"><a href="household-moving-interior.php" class="secondary-nav-link" title="">Residential Moving Process</a></li>
+      <li class="secondary-nav-item"><a href="household-moving-interior.php" class="secondary-nav-link" title="">Moving & Storage</a></li>
+      <li class="secondary-nav-item"><a href="household-moving-interior.php" class="secondary-nav-link" title="">Real Estate & Mortgage</a></li>
+      <li class="secondary-nav-item"><a href="household-moving-interior.php" class="secondary-nav-link" title="">Cross Country Moving</a></li>
+      <li class="secondary-nav-item"><a href="household-moving-interior.php" class="secondary-nav-link" title="">Interstate Moving</a></li>
+      <li class="secondary-nav-item"><a href="household-moving-interior.php" class="secondary-nav-link" title="">State to State Moving</a></li>
+      <li class="secondary-nav-item"><a href="household-moving-interior.php" class="secondary-nav-link" title="">National Movers</a></li>
+    </ul>
+  </div>
+</div>
+</section>
+<?php include 'inc_footer.php' ?>
 
-            <?php include 'inc_form_simple.php' ?>
-            <h2>Header Level 2</h2>         
-            <ol>
-               <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-               <li>Aliquam tincidunt mauris eu risus.</li>
-            </ol>
-
-            <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-
-            <h3>Header Level 3</h3>
-            <img src="assets/images/placeholder.jpg" alt="">
-
-            <ul>
-               <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-               <li>Aliquam tincidunt mauris eu risus.</li>
-            </ul>
-            <h4>Header Level 4</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
-            <h5>Header Level 5</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
-            <h6>Header Level 6</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
-
-          </article>
-          <aside class="col2 sidebar">
-            <?php include 'inc_sidebar_testimonial.php' ?>
-            <?php include 'inc_sidebar_banner.php' ?>
-           
-          </aside>
-        </div>
-      </div>
-    </section>
-    <?php include 'inc_footer.php' ?>
- 	<!-- Javascript Calls -->
- 	<script src="assets/js/script-ck.js"></script>
- </body>
-</html>

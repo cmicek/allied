@@ -1,7 +1,17 @@
+/*============================================
+ * Typography Stylesheet
+ * Project:  North American
+ * Table of Contents
+ *  ^Fonts
+ *  ^Headings
+ *  ^Lists
+ *  ^Links
+ *  ^Paragraph Level
+ * ============================================*/
 
 @import mixins
 
-/*Fonts =====================================*/
+/* ^Fonts =====================================*/
 
 
 @font-face
@@ -26,13 +36,64 @@
   font-style: normal
 
 
-
-
-/*Typography =====================================*/
-
+/* ^Default =====================================*/
 
 body
   font: 15px/22px "Univers 45", Arial, sans-serif 
+
+
+/* ^Headings =====================================*/  
+
+
+h1,.h1
+  color: $textred
+  font: 30px/35px "Univers 55", Arial, sans-serif
+  letter-spacing: -1px
+  margin: 0 0 11px
+
+h2,.h2
+  color: $textred
+  font: 25px/30px "Univers 45", Arial, sans-serif
+  letter-spacing: -1px
+  margin: 30px 0 11px
+
+
+h3,.h3
+  color: $textred
+  font: 20px/23px "Univers 45", Arial, sans-serif 
+  margin: 16px 0 11px
+
+h4,.h4
+  color: $textred
+  font: 16px/25px "Univers 45", Arial, sans-serif 
+  margin: 0 0 11px
+
+h5,.h5
+  color: $black
+  font: 14px/22px "Univers 55", Arial, sans-serif 
+  margin: 16px 0 11px
+
+h6,.h6
+  color: $black
+  font: 14px/22px "Univers 55", Arial, sans-serif 
+  margin: 0 0 0 0
+
+h1,h2,h3,h4,h5,h6
+  font-weight: normal
+  &:first-child
+    margin-top: 0
+.page-title
+  color: $textred
+  font: 35px/40px "Univers 45", Arial, sans-serif
+  margin: 0
+  padding-bottom: 15px
+  text-shadow: 0 1px 0 #fff
+.home-title
+  color: #fff
+  padding-bottom: 40px
+  text-shadow: 0 1px 1px rgba(0,0,0,.75), 0 0  8px rgba(0,0,0,.25)
+
+/* ^Links =====================================*/
 
 a
   @include transition ((border .15s, color .15s))
@@ -52,54 +113,28 @@ a
   
   &:active
     top: 1px
+
+
+/* ^Lists =====================================*/
+
+ul,ol
+  margin: 0 0 20px 0
   
+  &:last-child
+    margin-bottom: 0
 
-h1,h2,h3,h4,h5,h6
-  color: $textred
-  font-weight: normal
+li
+  margin: 0 0 7px 24px
 
-h1
-  font: 30px/35px "Univers 55", Arial, sans-serif
-  letter-spacing: -1px
-  margin: 0 0 11px
-
-h2
-  font: 25px/30px "Univers 55", Arial, sans-serif
-  letter-spacing: -1px
-  margin: 30px 0 11px
+ul li
+  list-style: disc
 
 
-h3
-  font: 20px/25px "Univers 55", Arial, sans-serif 
-  margin: 16px 0 11px
+ol li
+  list-style: decimal
 
-h4
-  font: 16px/25px "Univers 55", Arial, sans-serif 
-  margin: 0 0 11px
-h5
-  color: $black
-  font: 14px/22px "Univers 55", Arial, sans-serif 
-  margin: 16px 0 11px
-h6
-  color: $black
-  font: 14px/22px "Univers 45", Arial, sans-serif 
-  margin: 0 0 0 0
 
-.page-title
-  color: $textred
-  font: 35px/40px "Univers 45", Arial, sans-serif
-  margin: 0
-  padding-bottom: 15px
-  text-shadow: 0 1px 0 #fff
-
-strong
-  color: #222
-  font-family: "Univers 55"
-  font-weight: normal
-
-em,q
-  color: #222
-  font-style: italic
+/* ^Paragraph Level =====================================*/
 
 
 p
@@ -115,12 +150,14 @@ p
     padding-bottom: 30px
     text-shadow: 0 1px 0 #fff
 
+strong
+  color: #222
+  font-family: "Univers 55"
+  font-weight: normal
 
-ul,ol
-  margin: 0 0 20px 0
-  
-  &:last-child
-    margin-bottom: 0
+em,q
+  color: #222
+  font-style: italic
 
 blockquote
   border-top: solid 1px $black15
@@ -129,19 +166,19 @@ blockquote
   padding: 15px 0 
 
 img
-  box-shadow: 0 1px 6px rgba(0,0,0,.10)
+  box-shadow: 0 1px 3px rgba(0,0,0,.20)
   height: auto
   margin: 0 0 22px 0
   max-width: 100%
-li
-  margin: 0 0 7px 24px
 
-ul li
-  list-style: disc
-
-
-ol li
-  list-style: decimal
+  &.fl
+    float: left
+    margin-right: 22px
+    max-width: 50%
+  &.fr
+    float: right
+    margin-left: 22px
+    max-width: 50%
 
 small
   display: block

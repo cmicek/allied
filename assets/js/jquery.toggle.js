@@ -1,12 +1,14 @@
 var toggle = (function() {
-  strip = [".", "#"];
 
   //
   // Changes the class of the element, if specified
   //
+  // To specify a specific class, use the data-toggle-class-on="" and data-toggle-class-off="" attributes
+  // Otherwise the element will just get a "toggled" class when its on
 
   function changeClass($this){
     if(!$this.attr('data-toggle-class-on') && !$this.attr('data-toggle-class-off')){
+      $this.toggleClass('toggled');
       return false;
     }
     var classOn = $this.attr('data-toggle-class-on');
@@ -59,6 +61,7 @@ var toggle = (function() {
  
   //
   // Changes the class of the target element, if specified
+  // This isn't super robust. Targets close parents and children.
   //
 
   function changeTarget($this){
